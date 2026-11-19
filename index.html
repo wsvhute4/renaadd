@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="التداول, الأسهم, تعلم التداول, إدارة رأس المال">
+    <title>تداول بذكاء</title>
+    <link rel="stylesheet" href="re.css">
+</head>
+<body>
+    <div class="theme-bar">
+        <span>اختر لون مظهر الموقع:</span>
+        <button class="color-btn" style="background-color: #f1f5fa;" onclick="changeTheme('#f1f5fa', '#163b65')" title="أزرق رسمي"></button>
+        <button class="color-btn" style="background-color: #ecfdf5;" onclick="changeTheme('#ecfdf5', '#065f46')" title="أخضر استثماري"></button>
+        <button class="color-btn" style="background-color: #fffbeb;" onclick="changeTheme('#fffbeb', '#92400e')" title="ذهبي دافئ"></button>
+        <button class="color-btn" style="background-color: #1e293b;" onclick="changeTheme('#0f172a', '#38bdf8', true)" title="الوضع الليلي"></button>
+    </div>
+    <header id="mainHeader">
+        <div id="greetingBox" class="greeting-badge"></div>
+        <h1>تداول بذكاء 📈</h1>
+        <p>منصتك التعليمية التفاعلية لفهم عالم الأسهم وإدارة رأس المال قبل المخاطرة بأموالك</p>
+        <button class="about-toggle-btn" onclick="toggleTeam()">👥 من نحن (فريق العمل)</button>
+        <div id="teamBox" class="team-modal" style="display: none;">
+            <h3>إعداد الطالبات:</h3>
+            <dl>
+                <dt>جنى هزاع الشريف</dt>
+                <dd>446204954</dd>
+                <dt>شهد يحيى هوساوي</dt>
+                <dd>446265597</dd>
+                <dt>عهد صالح الزهراني</dt>
+                <dd>446265842</dd>
+                <dt>وسام بندر الزهراني</dt>
+                <dd>446265583</dd>
+                <dt>ريناد مساعد اللحياني</dt>
+                <dd>446265837</dd>
+            </dl>
+        </div>
+    </header>
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#start">خطتك التعليمية</a>
+        <a href="#learn">تعلم التداول</a>
+        <a href="#capital">إدارة رأس المال</a>
+        <a href="#practice">التداول التجريبي</a>
+        <a href="#assistant">المساعد الذكي</a>
+        <a href="#contact">تواصل معنا</a>
+    </nav>
+    <section id="home" class="hero-section">
+        <h2>أهلاً بك في عالم التداول الذكي</h2>
+        <p>موقع تعليمي يساعدك على فهم الأسهم، وقراءة المؤشرات، وإدارة أموالك بوعي وأمان قبل البدء بالتداول الحقيقي.</p>
+        <div class="slider-container">
+            <img id="slideImage" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=900&q=80" alt="تحليل الأسهم">
+            <div class="slider-caption" id="slideCaption">تعلم قراءة الرسوم البيانية وتحليل السوق خطوة بخطوة</div>
+            <div class="slider-controls">
+                <button onclick="prevSlide()">&#10094; السابق</button>
+                <button onclick="nextSlide()">التالي &#10095;</button>
+            </div>
+        </div>
+        <br>
+        <a class="button pulse-btn" href="#start">ابدأ رحلتك التعليمية الآن</a>
+    </section>
+    <section id="start">
+        <h2>خطط لرحلتك</h2>
+        <label>كم المبلغ المتاح لديك بالريال؟</label>
+        <input type="number" id="amount" placeholder="مثال: 1000">
+        <label>ما هدفك من التعلم؟</label>
+        <select id="goal">
+            <option>تعلم أساسيات التداول</option>
+            <option>تعلم إدارة رأس المال</option>
+            <option>فهم الأسهم والرسوم البيانية</option>
+            <option>التدرب على البيع والشراء</option>
+        </select>
+        <button onclick="makePlan()">اعرض خطتي التعليمية</button>
+        <p id="plan" class="result-box"></p>
+    </section>
+    <section id="learn">
+        <h2>تعلم أساسيات التداول</h2>
+        <div class="cards-grid">
+            <div class="info-card">
+                <h3>ما هو التداول؟</h3>
+                <p>هو شراء الأصول المالية وبيعها للاستفادة من تغير أسعارها، مع احتمال الربح أو الخسارة.</p>
+            </div>
+            <div class="info-card">
+                <h3>ما هو السهم؟</h3>
+                <p>السهم حصة تمثل جزءاً من ملكية شركة مدرجة في السوق المالية.</p>
+            </div>
+            <div class="info-card">
+                <h3>كيف أقرأ الألوان؟</h3>
+                <p><span class="green">● الأخضر: ارتفاع السعر غالباً.</span></p>
+                <p><span class="red">● الأحمر: انخفاض السعر غالباً.</span></p>
+            </div>
+            <div class="info-card">
+                <h3>ما هو الرسم البياني؟</h3>
+                <p>وسيلة بصرية تساعد على متابعة تغير سعر السهم خلال فترة زمنية محددة.</p>
+            </div>
+        </div>
+    </section>
+    <section id="capital">
+        <h2>إدارة رأس المال والمخاطر</h2>
+        <h3>كيف أدير أموالي بذكاء؟</h3>
+        <ul class="styled-list">
+            <li>حدد ميزانيتك بعد استبعاد احتياجاتك الأساسية.</li>
+            <li>لا تستثمر أموالاً لا تستطيع تحمل خسارتها.</li>
+            <li>لا تضع جميع أموالك في استثمار واحد (التنويع).</li>
+            <li>تعلم المخاطر قبل اتخاذ أي قرار مالي.</li>
+            <li>سجل قراراتك وراجع أخطاءك باستمرار.</li>
+        </ul>
+        <h3>متى تكون الصفقة خطرة؟</h3>
+        <p>قد تكون الصفقة خطرة عند تقلب الأسعار الحاد، أو استخدام مبلغ كبير، أو الشراء دون فهم الاستثمار. لا توجد صفقة مضمونة الربح.</p>
+    </section>
+    <section id="practice">
+        <h2>التداول التجريبي</h2>
+        <p>تدرب على الشراء والبيع باستخدام رصيد افتراضي دون استخدام أموال حقيقية.</p>
+        <div class="balance">
+            <p>الرصيد الافتراضي المتبقي</p>
+            <h2 id="balance">10000 ريال</h2>
+            <p>سعر السهم الافتراضي: <strong>100 ريال</strong></p>
+            <p>عدد الأسهم التي تملكها: <span id="shares" class="badge">0</span></p>
+            <button class="buy-btn" onclick="buyStock()">شراء سهم افتراضي (+)</button>
+            <button class="sell-btn" onclick="sellStock()">بيع سهم افتراضي (-)</button>
+            <p id="tradeMessage">ابدأ تجربتك الافتراضية هنا.</p>
+        </div>
+        <h3>سجل عملياتك</h3>
+        <ul id="history"></ul>
+        <p class="note">هذه محاكاة تعليمية بسعر ثابت، وليست أسعار سوق حقيقية.</p>
+    </section>
+    <section id="assistant">
+        <h2>المساعد الذكي للتداول</h2>
+        <p>اسأل عن التداول أو الأسهم أو المخاطر، وسيجيبك المساعد بطريقة مبسطة.</p>
+        <div id="chat">
+            <div id="messages">
+                <p class="bot"><strong>المساعد:</strong> مرحباً! أنا مساعدك التعليمي. كيف أستطيع مساعدتك اليوم؟</p>
+            </div>
+            <div class="chat-input-group">
+                <input type="text" id="question" placeholder="اكتب سؤالك هنا (مثال: ما هي المخاطر؟)">
+                <button onclick="askAssistant()">إرسال</button>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact-section">
+        <h2>تواصل معنا</h2>
+        <p>يسعدنا استقبال استفساراتكم ومقترحاتكم حول المشروع التعليمي:</p>
+        <div class="contact-info">
+            <p>📧 <strong>البريد الإلكتروني:</strong> smart.trade.edu@example.com</p>
+            <p>📱 <strong>رقم التواصل:</strong> 0500000000</p>
+        </div>
+        <div class="contact-form">
+            <input type="text" id="contactName" placeholder="الاسم الكريم">
+            <input type="email" id="contactEmail" placeholder="بريدك الإلكتروني">
+            <input type="text" id="contactMsg" placeholder="اكتب رسالتك أو اقتراحك هنا...">
+            <button onclick="sendContact()">إرسال الرسالة</button>
+            <p id="contactReply" class="green"></p>
+        </div>
+    </section>
+    <footer id="mainFooter">
+        <p>جميع الحقوق محفوظة ©️ 2026 - تداول بذكاء</p>
+        <p>مشروع تعليمي لتوعية المبتدئين بالتداول</p>
+    </footer>
+    <script>
+        // 1. التحية التلقائية حسب الوقت
+        function setGreeting() {
+            var day = new Date();
+            var hr = day.getHours();
+            var greetingBox = document.getElementById("greetingBox");
+            if (hr < 12) {
+                greetingBox.innerHTML = "☀️ صباح الخير! نتمنى لك يوماً مليئاً بالتعلم والنجاح";
+            } else if (hr < 18) {
+                greetingBox.innerHTML = "🌤️ طاب مساؤك بكل خير! أهلاً بك في رحلتك التعليمية";
+            } else {
+                greetingBox.innerHTML = "🌙 مساء الخير! وقت رائع لتطوير مهاراتك المالية";
+            }
+        }
+        setGreeting();
+        function changeTheme(bgColor, primaryColor, isDark = false) {
+            document.body.style.backgroundColor = bgColor;
+            document.getElementById("mainHeader").style.backgroundColor = primaryColor;
+            document.getElementById("mainFooter").style.backgroundColor = primaryColor;
+            var sections = document.querySelectorAll("section");
+            sections.forEach(function(sec) {
+                sec.style.backgroundColor = isDark ? "#1e293b" : "#ffffff";
+                sec.style.color = isDark ? "#f8fafc" : "#263449";
+            });
+            var headings = document.querySelectorAll("h2, h3");
+            headings.forEach(function(h) {
+                h.style.color = isDark ? "#38bdf8" : primaryColor;
+            });
+        }
+        function toggleTeam() {
+            var teamBox = document.getElementById("teamBox");
+            teamBox.style.display = (teamBox.style.display === "none") ? "block" : "none";
+        }
+        var slides = [
+            { img: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=900&q=80", caption: "تعلم قراءة الرسوم البيانية وتحليل السوق خطوة بخطوة" },
+            { img: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=900&q=80", caption: "إدارة رأس المال هي سر الاستمرار والنجاح في الأسواق المالية" },
+            { img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80", caption: "تدرب على المحاكاة الافتراضية قبل المخاطرة بأموالك الحقيقية" }
+        ];
+        var currentSlide = 0;
+        function showSlide(index) {
+            currentSlide = (index + slides.length) % slides.length;
+            document.getElementById("slideImage").src = slides[currentSlide].img;
+            document.getElementById("slideCaption").innerHTML = slides[currentSlide].caption;
+        }
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+        setInterval(nextSlide, 4000);
+        function makePlan() {
+            var amount = Number(document.getElementById("amount").value);
+            var goal = document.getElementById("goal").value;
+            var plan = document.getElementById("plan");
+            if (amount <= 0) {
+                plan.innerHTML = "⚠️ فضلاً أدخل مبلغاً صحيحاً أكبر من الصفر.";
+            } else {
+                plan.innerHTML = "✅ المبلغ المتاح: <strong>" + amount + " ريال</strong>. هدفك: <strong>" + goal + "</strong>. ننصحك بالبدء بالتعلم النظري ثم التداول التجريبي.";
+            }
+        }
+        var balance = 10000;
+        var shares = 0;
+        var price = 100;
+        function buyStock() {
+            if (balance >= price) {
+                balance -= price;
+                shares += 1;
+                updateTrade("🟢 تم شراء سهم افتراضي واحد.");
+            } else {
+                updateTrade("⚠️ رصيدك الافتراضي لا يكفي للشراء.");
+            }
+        }
+        function sellStock() {
+            if (shares > 0) {
+                balance += price;
+                shares -= 1;
+                updateTrade("🔴 تم بيع سهم افتراضي واحد.");
+            } else {
+                updateTrade("⚠️ لا تملك أسهماً افتراضية للبيع.");
+            }
+        }
+        function updateTrade(message) {
+            document.getElementById("balance").innerHTML = balance + " ريال";
+            document.getElementById("shares").innerHTML = shares;
+            document.getElementById("tradeMessage").innerHTML = message;
+            var item = document.createElement("li");
+            item.innerHTML = message + " | الرصيد الحالي: <strong>" + balance + " ريال</strong>.";
+            document.getElementById("history").prepend(item);
+        }
+        function askAssistant() {
+            var input = document.getElementById("question");
+            var question = input.value.trim();
+            var qLower = question.toLowerCase();
+            var messages = document.getElementById("messages");
+            var answer = "يمكنك البدء بتعلم أساسيات الأسهم وإدارة رأس المال. جرب سؤالي عن: الأسهم، المخاطر، الألوان، أو التداول التجريبي.";
+            if (question === "") return;
+            if (qLower.includes("مرحبا") || qLower.includes("السلام")) {
+                answer = "أهلاً بك! اسألني عن أي مصطلح في التداول وسأشرحه لك ببساطة.";
+            } else if (qLower.includes("مخاطر") || qLower.includes("خسارة")) {
+                answer = "التداول ينطوي على مخاطر عالية. لا تستثمر أموال احتياجاتك الأساسية.";
+            } else if (qLower.includes("أخضر") || qLower.includes("أحمر") || qLower.includes("ألوان")) {
+                answer = "الأخضر يدل غالباً على ارتفاع السعر، والأحمر على انخفاضه.";
+            } else if (qLower.includes("رأس المال") || qLower.includes("أموالي") || qLower.includes("ميزانية")) {
+                answer = "نظم ميزانيتك، وحدد المبلغ الذي تستطيع تحمل خسارته.";
+            } else if (qLower.includes("سهم") || qLower.includes("أسهم")) {
+                answer = "السهم حصة في ملكية شركة. تابع أداء الشركة وافهم مخاطرها قبل الشراء.";
+            } else if (qLower.includes("تجريبي") || qLower.includes("شراء") || qLower.includes("بيع")) {
+                answer = "يمكنك تجربة الشراء والبيع في قسم التداول التجريبي أعلاه.";
+            }
+            messages.innerHTML += '<p class="user"><strong>أنت:</strong> ' + question + '</p>';
+            messages.innerHTML += '<p class="bot"><strong>المساعد:</strong> ' + answer + '</p>';
+            messages.scrollTop = messages.scrollHeight;
+            input.value = "";
+        }
+        function sendContact() {
+            var name = document.getElementById("contactName").value.trim();
+            var msg = document.getElementById("contactMsg").value.trim();
+            var reply = document.getElementById("contactReply");
+            if (name === "" || msg === "") {
+                reply.style.color = "#d62828";
+                reply.innerHTML = "يرجى كتابة الاسم والرسالة أولاً.";
+            } else {
+                reply.style.color = "#16834a";
+                reply.innerHTML = "شكراً لك يا " + name + "! تم استلام رسالتك بنجاح.";
+                document.getElementById("contactName").value = "";
+                document.getElementById("contactEmail").value = "";
+                document.getElementById("contactMsg").value = "";
+            }
+        }
+    </script>
+</body>
+</html>
